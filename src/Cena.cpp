@@ -1,4 +1,4 @@
-#include "../Include/Cena.hpp"
+#include "../include/Cena.hpp"
 
 // Implementação do Segment
 
@@ -73,4 +73,5 @@ Segment& Scene::operator[](int idposition_x) {
 void Scene::clean() {
     size = 0;
 }
+
 
