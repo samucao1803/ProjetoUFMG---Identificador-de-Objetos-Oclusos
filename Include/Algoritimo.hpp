@@ -63,4 +63,16 @@ void processrecur(Obj* Objs, int num_Objs, Scene* Scene, double seg_ini, double 
 // Gera a Cena no tempo especificado, aplicando o algoritmo de oclusão
 void hiddenscene(Obj* objs, int num_objs, Scene* Scene);
 
+// Função para imprimir segmentos
+void imprimirSegmentos(Scene& cena, Segment segmentos[], int n);
+
+// Função auxiliar para trocar dois Segmentos de lugar.
+void swap_segments(Segment& a, Segment& b);
+//partição do quick sort de segmentos
+int partition_segments(Segment arr[], int low, int high);
+//quick sort de segmentos
+void quicksort_segments(Segment arr[], int low, int high);
+
+
+
 #endif // ALGORITMO_OCLUSAO_HPP
