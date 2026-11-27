@@ -3,9 +3,9 @@
 #include <iomanip>
 #include <cmath>
 #include <cstring>
-#include "../include/Objeto.hpp"
-#include "../include/Cena.hpp"
-#include "../include/Algoritimo.hpp"
+#include "Objeto.hpp"
+#include "Cena.hpp"
+#include "Algoritmo.hpp"
 
 
 
@@ -73,7 +73,8 @@ int main() {
 
         // Ordena os segmentos por ID
         int n_segmentos = cena.getsize();
-        Segment segmentos_ordenados[200];
+        // Um objeto pode gerar mais de um segmento, então o vetor acompanha o tamanho da cena
+        Segment* segmentos_ordenados = new Segment[n_segmentos > 0 ? n_segmentos : 1];
 
         for (int i = 0; i < n_segmentos; ++i) {
             segmentos_ordenados[i] = cena[i];
@@ -86,6 +87,7 @@ int main() {
 
         //Printa a saida final
         imprimirSegmentos(cena, segmentos_ordenados, n_segmentos);
+        delete[] segmentos_ordenados;
     }
 
     return 0;
