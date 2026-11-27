@@ -1,4 +1,4 @@
-#include "../include/Objeto.hpp"
+#include "Objeto.hpp"
 
 // Implementação da Classe Obj
 
@@ -12,7 +12,7 @@ Obj::Obj() : id(-1), position_x(0), position_y(0), width(0) {
 //implementação do contrutor por parâmetro
 Obj::Obj(int new_id, double new_position_x, double new_position_y, double new_width){ 
     id = new_id;
-    position_x = position_x; 
+    position_x = new_position_x; 
     position_y = new_position_y; 
     width = new_width; 
 }
@@ -64,9 +64,9 @@ int Obj_List::getsize() const {
     return size;
 }
 //Operador auxiliar
-Obj& Obj_List::operator[](int idposition_x) {
+Obj& Obj_List::operator[](int idx) {
     
-    return data[idposition_x];
+    return data[idx];
 }
 //função de limpar o vetor
 void Obj_List::clean() {

@@ -2,31 +2,31 @@
 #include <iostream>
 #include <cmath>
 #include <cstring>
-#include "../include/Algoritimo.hpp"
-#include "../include/Objeto.hpp"
-#include "../include/Cena.hpp"
+#include "Algoritmo.hpp"
+#include "Objeto.hpp"
+#include "Cena.hpp"
 
-#define MAposition_xX_ObjS 100
-#define MAposition_xX_moviments 200
-#define MAposition_xX_SceneS 20
-#define MAposition_xX_LINHA 128
+#define MAX_ObjS 100
+#define MAX_moviments 200
+#define MAX_SceneS 20
+#define MAX_LINHA 128
 
 
 int main() {
-    Obj Objs[MAposition_xX_ObjS];
+    Obj Objs[MAX_ObjS];
     int n_Objs = 0;
-    Move moviments[MAposition_xX_moviments];
+    Move moviments[MAX_moviments];
     int n_moviments = 0;
-    int times_Scene[MAposition_xX_SceneS];
+    int times_Scene[MAX_SceneS];
     int n_Scenes = 0;
 
     std::cout << "Digite as linhas de entrada (O, M, C). Para terminar, digite FIM:\n";
 
-    char linha[MAposition_xX_LINHA];
+    char linha[MAX_LINHA];
 
     // Armazena Objs, moviments e Scenes
     while (true) {
-        std::cin.getline(linha, MAposition_xX_LINHA);
+        std::cin.getline(linha, MAX_LINHA);
         if (strcmp(linha, "FIM") == 0) break;
         if (linha[0] == '\0') continue;
         if (linha[0] == 'O') {
@@ -52,17 +52,17 @@ int main() {
     }
 
     // Para cada Scene, aplica moviments e gera saída
-    for (int Scene_idposition_x = 0; Scene_idposition_x < n_Scenes; ++Scene_idposition_x) {
-        int time_Scene = times_Scene[Scene_idposition_x];
+    for (int scene_idx = 0; scene_idx < n_Scenes; ++scene_idx) {
+        int time_Scene = times_Scene[scene_idx];
 
-        // Cria cópia dos Objs originais para não alterar para próposition_ximas Scenes
-        Obj Objs_Scene[MAposition_xX_ObjS];
+        // Cria cópia dos Objs originais para não alterar para próximas Scenes
+        Obj Objs_Scene[MAX_ObjS];
         for (int i = 0; i < n_Objs; ++i)
             Objs_Scene[i] = Objs[i];
 
         // Aplica moviments até time da Scene
-        for (int m_idposition_x = 0; m_idposition_x < n_moviments; ++m_idposition_x) {
-            Move& m = moviments[m_idposition_x];
+        for (int m_idx = 0; m_idx < n_moviments; ++m_idx) {
+            Move& m = moviments[m_idx];
             if (m.time <= time_Scene) {
                 for (int i = 0; i < n_Objs; ++i) {
                     if (Objs_Scene[i].id == m.id) {
@@ -80,7 +80,7 @@ int main() {
 
         // Ordenação dos segmentos por ID, se necessário
         int n_segmentos = scn.getsize();
-        Segment segmentos_ordenados[MAposition_xX_ObjS];
+        Segment segmentos_ordenados[MAX_ObjS];
 
         for (int i = 0; i < n_segmentos; ++i) {
             segmentos_ordenados[i] = scn[i];

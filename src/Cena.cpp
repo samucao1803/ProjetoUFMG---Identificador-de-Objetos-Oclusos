@@ -1,4 +1,4 @@
-#include "../include/Cena.hpp"
+#include "Cena.hpp"
 
 // Implementação do Segment
 
@@ -65,8 +65,8 @@ int Scene::getsize() const {
 }
 
 //operador auxiliar
-Segment& Scene::operator[](int idposition_x) {
-    return seg[idposition_x];
+Segment& Scene::operator[](int idx) {
+    return seg[idx];
 }
 
 //função de limpeza

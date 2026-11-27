@@ -41,7 +41,7 @@ public:
     //pega o tamanho da cena
     int getsize() const;
     //Operador auxiliar
-    Segment& operator[](int idposition_x);
+    Segment& operator[](int idx);
 
     //limpa
     void clean();

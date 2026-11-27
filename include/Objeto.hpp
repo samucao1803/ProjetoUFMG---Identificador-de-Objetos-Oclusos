@@ -39,7 +39,7 @@ public:
     // função para conseguir o tamanho da lsita 
     int getsize() const;
     // Operador para ajudar na construção
-    Obj& operator[](int idposition_x);
+    Obj& operator[](int idx);
     // função para limpar a Lista
     void clean();
 };

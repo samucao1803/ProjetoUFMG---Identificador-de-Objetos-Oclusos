@@ -1,0 +1,12 @@
+# Build
+obj/
+bin/
+*.o
+*.out
+!examples/*.out
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

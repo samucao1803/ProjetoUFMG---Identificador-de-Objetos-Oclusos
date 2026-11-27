@@ -30,7 +30,7 @@ struct Move {
 //Arvore de pesquisa binaria
 int bisearch(interval arr[], int n, double valor);
 
-// Insere (merge) um novo interval no arraposition_y de coverd, mantendo ordenado e sem sobreposição
+// Insere (merge) um novo interval no array de coverd, mantendo ordenado e sem sobreposição
 void addinterval(interval coverd[], int& n_coverd, double ini, double end);
 
 // Função auxiliar para trocar intervalos 
